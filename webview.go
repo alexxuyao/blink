@@ -285,3 +285,21 @@ func (view *WebView) DestroyWindow() {
 		<-done
 	}
 }
+
+func (view *WebView) SetCookieEnabled(enable bool) {
+	done := make(chan bool)
+	jobQueue <- func() {
+		C.setCookieEnabled(view.window, C.bool(enable))
+		close(done)
+	}
+	<-done
+}
+
+func (view *WebView) GetCookie() string {
+	done := make(chan string)
+	jobQueue <- func() {
+		done <- C.GoString(C.getCookie(view.window))
+		close(done)
+	}
+	return <-done
+}

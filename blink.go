@@ -5,10 +5,10 @@ import "C"
 
 import (
 	"fmt"
+	"github.com/alexxuyao/blink/internal/devtools"
+	"github.com/alexxuyao/blink/internal/dll"
 	"github.com/elazarl/go-bindata-assetfs"
 	"github.com/lxn/win"
-	"github.com/raintean/blink/internal/devtools"
-	"github.com/raintean/blink/internal/dll"
 	"os"
 	"path/filepath"
 	"runtime"

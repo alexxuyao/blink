@@ -19,5 +19,7 @@ void setWindowTitle(wkeWebView window, char *title);
 const char *getWebTitle(wkeWebView window);
 void destroyWindow(wkeWebView window);
 void showDevTools(wkeWebView window);
+void setCookieEnabled(wkeWebView window, bool enable);
+const char *getCookie(wkeWebView window);
 
 #endif
